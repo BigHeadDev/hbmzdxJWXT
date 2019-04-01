@@ -1,0 +1,63 @@
+﻿<Page
+    x:Class="湖北民族学院教务系统.InnovatePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:湖北民族学院教务系统"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="InnDataTemplate">
+                <Grid CornerRadius="10" BorderBrush="#00B2EE" BorderThickness="1" Background="White" Margin="0,5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="100*"/>
+                        <ColumnDefinition Width="100*"/>
+                        <ColumnDefinition Width="100*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="70*"/>
+                        <RowDefinition Height="30*"/>
+                    </Grid.RowDefinitions>
+                    <Rectangle Fill="#00B2EE" Width="10" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"/>
+                    <TextBlock Text="{Binding Iname}" Foreground="#00B2EE" FontSize="15" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3"/>
+                    <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="1">
+                        <TextBlock Text="学分:" Foreground="#00B2EE" Margin="5"/>
+                        <TextBlock Text="{Binding Igrade}" Foreground="#00B2EE" Margin="5"/>
+                    </StackPanel>
+                    <StackPanel  Orientation="Horizontal" Grid.Column="2" Grid.Row="1">
+                        <TextBlock Text="{Binding Istatus}" Foreground="Green" Margin="5"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Column="3" Grid.Row="1">
+                        <TextBlock Text="学年:" Foreground="#00B2EE" Margin="5"/>
+                        <TextBlock Text="{Binding Iyear}" Margin="5"/>
+                    </StackPanel>
+                </Grid>
+            </DataTemplate>
+        </ResourceDictionary>
+    </Page.Resources>
+    <Page.Transitions>
+        <TransitionCollection>
+            <NavigationThemeTransition>
+                <SlideNavigationTransitionInfo/>
+            </NavigationThemeTransition>
+        </TransitionCollection>
+    </Page.Transitions>
+    <Grid Background="#F5F5F5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Rectangle Fill="#00B2EE" Grid.Row="0" Grid.ColumnSpan="2"/>
+        <TextBlock Foreground="White" Margin="5,2" FontSize="20" Text="创新学分" Grid.Row="0" Grid.ColumnSpan="2"/>
+        <ListView SelectionMode="None" Margin="5,0" Grid.Row="1" x:Name="listInnovate" ItemsSource="{Binding innlists}" IsItemClickEnabled="True" ItemTemplate="{StaticResource InnDataTemplate}">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                    <Setter Property="Background" Value="#F5F5F5"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+        </ListView>
+    </Grid>
+</Page>

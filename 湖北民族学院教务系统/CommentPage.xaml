@@ -1,0 +1,52 @@
+﻿<Page
+    x:Class="湖北民族学院教务系统.CommentPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:湖北民族学院教务系统"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="ComDataTemplate">
+                <Grid Background="White" CornerRadius="10" BorderBrush="#00B2EE" BorderThickness="1" Margin="0,5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="60*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="{Binding Cstatus}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{Binding CColor}" FontSize="15" Grid.Column="0"/>
+                    <Rectangle Fill="#00B2EE" Width="10"  Grid.Column="1"/>
+                    <StackPanel Orientation="Vertical" Grid.Column="2">
+                        <TextBlock Text="{Binding CclassNum}" Foreground="Black" HorizontalAlignment="Left" FontSize="20" Margin="5"/>
+                        <TextBlock Text="{Binding Cteacher}" HorizontalAlignment="Left" FontSize="12" Margin="5"/>
+                    </StackPanel>
+                </Grid>
+            </DataTemplate>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Page.Transitions>
+        <TransitionCollection>
+            <NavigationThemeTransition>
+                <SlideNavigationTransitionInfo/>
+            </NavigationThemeTransition>
+        </TransitionCollection>
+    </Page.Transitions>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Rectangle Fill="#00B2EE" Grid.Row="0" Grid.ColumnSpan="2"/>
+        <TextBlock Foreground="White" Margin="5,2" FontSize="20" Text="教学评价" Grid.Row="0" Grid.ColumnSpan="2"/>
+        <ListView SelectionMode="None" Margin="5,0" Grid.Row="1"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" x:Name="listComments" ItemsSource="{Binding annlists}" ItemTemplate="{StaticResource ComDataTemplate}" ItemClick="listComments_ItemClick" IsItemClickEnabled="True">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                    <Setter Property="Background" Value="#F5F5F5"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+        </ListView>
+    </Grid>
+</Page>

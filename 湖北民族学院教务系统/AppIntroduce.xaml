@@ -1,0 +1,21 @@
+﻿<Page
+    x:Class="湖北民族学院教务系统.AppIntroduce"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:湖北民族学院教务系统"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Rectangle Fill="#00B2EE" Grid.Row="0" Grid.ColumnSpan="2"/>
+        <TextBlock Foreground="White" Margin="5,2" FontSize="20" Text="隐私政策" Grid.Row="0"/>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="2">
+        <TextBlock Text="一，软件来源&#x000A;&#x0009;湖北民族大学教务系统UWP是采用HTML分析器作为核心技术,以湖北民族大学教务系统为数据源,通过获取网页抓包数据进行分析整理,以用户UI展示出来结果的第三方Windows10客户端。&#x000A;&#x0009;整体功能需求设计和UI采用安卓版本(湖北民院-教务系统）功能，UI是采用安卓APK解包获取的图片素材，如有侵权，请学长学姐及时联系我下架。&#x000A;&#x000A;二，Cookies与网络信息&#x000A;&#x0009;cookies是网站经常存储于用户电脑上的少量记录信息。我们的cookies不会包括个人信息，一般用于快速识别您的设备并记住您。本软件将使用Cookies去获取您的登陆用户信息，并将保证不会泄露您的任何数据。&#x000A;&#x000A;三，保障措施&#x000A;&#x0009;我们按照行业通行标准合理保护信息的安全、完整和秘密。您个人信息的访问权限仅限于为根据本政策完成工作任务或进行技术维护工作需要处理您个人信息的人员。我们收集的个人信息保存于不向公众开放的安全运行环境之中。为避免未经授权访问您的个人信息，我们将其保存在有防火墙保护并可能加密的服务器之中。但是，没有什么系统是100%安全的。即使我们做出了合理努力，仍可能有人未经允许访问您的个人信息。此外，人们的言行可能不可靠，或具有误导性、非法性。我们无法告诉您别的用户说的是否属实。如果您使用我们的服务，您要自担以上数据失窃或被误导、被欺诈、被违法侵害的风险。&#x000A;&#x000A;三，开源&#x000A;&#x0009;本软件将在完善一切功能之后进行开源，届时将发布在GitHub上供大家学习使用。" TextWrapping="Wrap" Grid.Row="1"/>
+        </ScrollViewer>
+    </Grid>
+</Page>
